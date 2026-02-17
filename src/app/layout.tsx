@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   description: "Portfolio of Sebastian Ibañez, a Software Engineer specializing in Java, Spring Boot, AWS, and Microservices. Building secure and scalable distributed systems.",
   keywords: ["Sebastian Ibañez", "Software Engineer", "Backend Developer", "Java", "Spring Boot", "AWS", "Microservices", "Full-Stack Developer", "Barranquilla"],
   icons: {
-    icon: "/images/icon.jpg?v=1",
-    shortcut: "/images/icon.jpg?v=1",
-    apple: "/images/icon.jpg?v=1",
+    icon: "/images/pngegg.png?v=2",
+    shortcut: "/images/pngegg.png?v=2",
+    apple: "/images/pngegg.png?v=2",
   },
 };
 
