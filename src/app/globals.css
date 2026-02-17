@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cyber-bg: #0D0F14;
+  --color-cyber-text: #E0E0E0;
+  --color-cyber-alert: #FF3E3E;
+  --color-cyber-cyan: #00F0FF;
+  --color-cyber-warning: #FF9900;
+  
+  --font-sans: "Inter", "Helvetica Now", sans-serif;
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", monospace;
+}
+
+:root {
+  --background: #0D0F14;
+  --foreground: #E0E0E0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* CRT & Scanline Effects */
+.crt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.1) 50%
+  ), 
+  linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+  background-size: 100% 3px, 3px 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.noise-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9998;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Custom Scrollbar for Cybercore */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D0F14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF3E3E;
+  border-radius: 0;
+}
+
+/* Utility for Technical Grid */
+.grid-dots {
+  background-image: radial-gradient(circle, #E0E0E0 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.05;
+}
