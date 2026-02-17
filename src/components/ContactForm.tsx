@@ -50,7 +50,7 @@ export const ContactForm = () => {
           required
           value={formData.name}
           disabled={isSending}
-          className="w-full bg-black/40 border border-white/10 p-4 text-white text-sm focus:border-cyber-purple outline-none transition-colors disabled:opacity-50"
+          className="w-full bg-black/10 border border-white/10 p-4 text-white text-sm focus:border-cyber-purple outline-none transition-colors disabled:opacity-50"
           placeholder="ENTER_NAME..."
           onChange={(e) => setState({ ...formData, name: e.target.value })}
         />
@@ -65,7 +65,7 @@ export const ContactForm = () => {
           required
           value={formData.email}
           disabled={isSending}
-          className="w-full bg-black/40 border border-white/10 p-4 text-white text-sm focus:border-cyber-purple outline-none transition-colors disabled:opacity-50"
+          className="w-full bg-black/10 border border-white/10 p-4 text-white text-sm focus:border-cyber-purple outline-none transition-colors disabled:opacity-50"
           placeholder="EMAIL@PROTOCOL.COM"
           onChange={(e) => setState({ ...formData, email: e.target.value })}
         />
@@ -80,7 +80,7 @@ export const ContactForm = () => {
           rows={4}
           value={formData.message}
           disabled={isSending}
-          className="w-full bg-black/40 border border-white/10 p-4 text-white text-sm focus:border-cyber-purple outline-none transition-colors resize-none disabled:opacity-50"
+          className="w-full bg-black/10 border border-white/10 p-4 text-white text-sm focus:border-cyber-purple outline-none transition-colors resize-none disabled:opacity-50"
           placeholder="WRITE_MESSAGE_DATA..."
           onChange={(e) => setState({ ...formData, message: e.target.value })}
         />

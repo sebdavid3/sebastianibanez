@@ -18,9 +18,9 @@ export const TerminalFrame = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <div className="flex-1 flex flex-col border-x-2 border-cyber-border mx-4 md:mx-16 relative bg-black">
+    <div className="flex-1 flex flex-col border-x-2 border-cyber-border mx-4 md:mx-16 relative bg-black/10 transition-colors duration-500">
       {/* HUD Superior Sólido */}
-      <header className="h-16 border-b-2 border-cyber-border flex items-center justify-between px-8 font-mono text-[11px] tracking-widest text-white font-bold bg-[#0A0A0A]">
+      <header className="h-16 border-b-2 border-cyber-border flex items-center justify-between px-8 font-mono text-[11px] tracking-widest text-white font-bold bg-black/20">
         <div className="flex items-center gap-10">
           <div className="flex items-center gap-3">
             <div className="w-2.5 h-2.5 bg-cyber-green rounded-full shadow-[0_0_8px_#52d053]" />
@@ -36,7 +36,7 @@ export const TerminalFrame = ({ children }: { children: React.ReactNode }) => {
 
       <div className="flex-1 grid grid-cols-12 relative">
         {/* Barra Lateral Marcada */}
-        <aside className="hidden lg:flex col-span-1 border-r-2 border-cyber-border flex-col items-center py-12 bg-[#080808]">
+        <aside className="hidden lg:flex col-span-1 border-r-2 border-cyber-border flex-col items-center py-12 bg-black/5">
           <div className="vertical-text rotate-180 font-mono text-[10px] text-cyber-purple uppercase tracking-[0.8em] font-black">
             EVA-2003
           </div>
@@ -46,7 +46,7 @@ export const TerminalFrame = ({ children }: { children: React.ReactNode }) => {
         </aside>
 
         {/* Contenido Principal */}
-        <div className="col-span-12 lg:col-span-11 relative overflow-y-auto">
+        <div className="col-span-12 lg:col-span-11 relative">
           {children}
         </div>
       </div>

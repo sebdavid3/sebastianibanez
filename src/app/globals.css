@@ -13,30 +13,32 @@
 }
 
 :root {
-  --background: #050505;
+  --background: #000000;
   --foreground: #FFFFFF;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: #000000;
+  color: #FFFFFF;
   font-family: var(--font-sans);
   overflow-x: hidden;
 }
 
+/* Simplified CRT Overlay for Performance */
 .crt-overlay {
   position: fixed;
   top: 0; left: 0; width: 100vw; height: 100vh;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%);
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
   background-size: 100% 4px;
   pointer-events: none;
   z-index: 9999;
 }
 
+/* Very subtle grid dots */
 .grid-dots {
   background-image: radial-gradient(circle, #765898 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity: 0.1;
+  background-size: 60px 60px;
+  opacity: 0.05;
 }
 
 @keyframes progressScan {

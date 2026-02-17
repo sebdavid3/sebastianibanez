@@ -23,12 +23,12 @@ export const ProjectCard = ({ id, title, tags, status, description, link, classN
       rel="noopener noreferrer"
       whileHover={{ y: -4 }}
       className={cn(
-        "group relative border-2 border-cyber-border bg-black p-0 flex flex-col hover:border-cyber-purple transition-all duration-300 cursor-pointer block",
+        "group relative border-2 border-cyber-border bg-black/40 p-0 flex flex-col hover:border-cyber-purple transition-all duration-300 cursor-pointer block",
         className
       )}
     >
       {/* Header Area */}
-      <div className="border-b-2 border-cyber-border p-6 flex justify-between items-center bg-[#0A0A0A] group-hover:border-cyber-purple transition-colors">
+      <div className="border-b-2 border-cyber-border p-6 flex justify-between items-center bg-black/10 group-hover:border-cyber-purple transition-colors">
         <div className="font-mono text-[10px] text-cyber-purple tracking-[0.2em] font-black uppercase">
           Archive_ID: {id}
         </div>

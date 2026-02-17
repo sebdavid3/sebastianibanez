@@ -55,7 +55,7 @@ export default function Home() {
             exit={{ opacity: 0, scale: 1.05 }}
             className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center p-6"
           >
-            <div className="w-full max-w-md font-mono text-[10px] space-y-2 border border-cyber-purple/20 p-8 bg-[#050505] relative overflow-hidden">
+            <div className="w-full max-w-md font-mono text-[10px] space-y-2 border border-cyber-purple/20 p-8 bg-black/20 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyber-purple/5 to-transparent h-10 w-full animate-scanline pointer-events-none" />
               <div className="flex items-center gap-2 text-cyber-purple mb-4">
                 <ShieldAlert size={14} className="animate-pulse" />
@@ -102,7 +102,7 @@ export default function Home() {
                       </h2>
                     </div>
                     
-                    <div className="relative group cursor-default inline-block mb-8">
+                    <div className="relative group cursor-default inline-block mb-16">
                       <h1 className="text-5xl md:text-[6.5rem] font-black uppercase tracking-tighter leading-none text-white relative z-10 whitespace-nowrap">
                         SEBASTIAN IBAÑEZ
                       </h1>
@@ -117,12 +117,12 @@ export default function Home() {
                     </div>
 
                     {/* NEW CLI-STYLE FULL WIDTH PROGRESS BAR */}
-                    <div className="w-full max-w-4xl mb-20 font-mono space-y-2">
+                    <div className="w-full mb-20 font-mono space-y-2">
                       <div className="flex justify-between items-end text-[10px] tracking-widest uppercase font-black">
                         <span className="text-cyber-purple animate-pulse">Status: Syncing_System_Core...</span>
                         <span className="text-white">{progress}%</span>
                       </div>
-                      <div className="w-full h-4 border border-cyber-purple/30 bg-black/40 flex items-center px-1 gap-1">
+                      <div className="w-full h-4 border border-cyber-purple/20 bg-black/10 flex items-center px-1 gap-1">
                         {[...Array(50)].map((_, i) => (
                           <div 
                             key={i} 
@@ -412,7 +412,7 @@ export default function Home() {
                     <SectionHeader title="Academic_Synchronization" subtitle="05_EDUCATION" />
                     <div className="mt-12 space-y-8">
                       {/* Universidad del Norte */}
-                      <div className="p-8 border-2 border-cyber-border bg-black/40 hover:border-cyber-purple transition-all group relative overflow-hidden">
+                      <div className="p-8 border-2 border-cyber-border bg-black/10 hover:border-cyber-purple transition-all group relative overflow-hidden">
                         <div className="flex flex-wrap justify-between items-start gap-4 mb-6">
                           <div className="space-y-1">
                             <h3 className="text-3xl font-black text-white uppercase tracking-tighter">Systems Engineering</h3>
@@ -434,7 +434,7 @@ export default function Home() {
                       </div>
 
                       {/* Universidad del Atlántico */}
-                      <div className="p-8 border-2 border-cyber-border bg-black/40 hover:border-cyber-purple transition-all group relative overflow-hidden">
+                      <div className="p-8 border-2 border-cyber-border bg-black/10 hover:border-cyber-purple transition-all group relative overflow-hidden">
                         <div className="flex flex-wrap justify-between items-start gap-4 mb-6">
                           <div className="space-y-1">
                             <h3 className="text-2xl font-black text-white uppercase tracking-tighter">English Language Program</h3>
@@ -487,7 +487,7 @@ export default function Home() {
                         <p className="text-white/60 text-sm font-sans max-w-2xl">Rigorous technical track validating proficiency in data architecture, SQL optimization, and professional data engineering workflows.</p>
                       </div>
 
-                      <div className="p-6 border border-white/10 bg-[#080808] space-y-6">
+                      <div className="p-6 border border-white/10 bg-black/10 space-y-6">
                         <h4 className="font-mono text-xs text-cyber-purple font-black uppercase border-b border-white/5 pb-2">Data Architecture</h4>
                         <ul className="space-y-4 text-[11px] font-mono uppercase">
                           <li className="group">
@@ -511,7 +511,7 @@ export default function Home() {
                         </ul>
                       </div>
 
-                      <div className="p-6 border border-white/10 bg-[#080808] space-y-6">
+                      <div className="p-6 border border-white/10 bg-black/10 space-y-6">
                         <h4 className="font-mono text-xs text-cyber-green font-black uppercase border-b border-white/5 pb-2">Cloud & Modern Data</h4>
                         <ul className="space-y-4 text-[11px] font-mono uppercase">
                           <li className="group">
@@ -535,7 +535,7 @@ export default function Home() {
                         </ul>
                       </div>
 
-                      <div className="p-6 border border-white/10 bg-[#080808] space-y-6">
+                      <div className="p-6 border border-white/10 bg-black/10 space-y-6">
                         <h4 className="font-mono text-xs text-white font-black uppercase border-b border-white/5 pb-2">System Standards</h4>
                         <ul className="space-y-4 text-[11px] text-white/60 font-mono uppercase">
                           <li>— Agile Engineering</li>
