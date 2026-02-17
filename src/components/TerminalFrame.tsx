@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
 export const TerminalFrame = ({ children }: { children: React.ReactNode }) => {
   const [time, setTime] = useState("");
@@ -9,51 +8,52 @@ export const TerminalFrame = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const timer = setInterval(() => {
       const now = new Date();
-      setTime(now.toLocaleTimeString("en-US", { hour12: false }));
+      // Configurado para hora local de Colombia
+      setTime(now.toLocaleTimeString("en-US", { 
+        hour12: false, 
+        timeZone: "America/Bogota" 
+      }));
     }, 1000);
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="flex-1 flex flex-col border-x border-cyber-text/10 mx-4 md:mx-12 relative">
-      {/* Top HUD Bar */}
-      <header className="h-10 border-b border-cyber-text/20 flex items-center justify-between px-4 font-mono text-[10px] tracking-widest text-cyber-text/50">
-        <div className="flex items-center gap-4">
-          <span className="text-cyber-alert animate-pulse">● SYSTEM_LIVE</span>
-          <span>LATENCY: 12ms</span>
-          <span className="hidden md:inline">LOC: 35.6895° N, 139.6917° E</span>
+    <div className="flex-1 flex flex-col border-x-2 border-cyber-border mx-4 md:mx-16 relative bg-black">
+      {/* HUD Superior Sólido */}
+      <header className="h-16 border-b-2 border-cyber-border flex items-center justify-between px-8 font-mono text-[11px] tracking-widest text-white font-bold bg-[#0A0A0A]">
+        <div className="flex items-center gap-10">
+          <div className="flex items-center gap-3">
+            <div className="w-2.5 h-2.5 bg-cyber-green rounded-full shadow-[0_0_8px_#52d053]" />
+            <span className="text-white uppercase">Synchronized</span>
+          </div>
+          <span className="hidden md:inline text-cyber-purple font-black tracking-[0.2em]">PROTOCOL: SEBDAVID3_OS</span>
         </div>
-        <div className="flex items-center gap-4">
-          <span className="text-cyber-cyan">V.2.0.26_PROTOTYPE</span>
-          <span className="text-cyber-text">{time}</span>
+        <div className="flex items-center gap-10">
+          <span className="text-cyber-purple uppercase font-black tracking-tighter">LOC: 10.9833° N, 74.8019° W</span>
+          <span className="text-white border-l border-cyber-border pl-10">T: {time}</span>
         </div>
       </header>
 
-      {/* Main Content Area with 12-column grid */}
       <div className="flex-1 grid grid-cols-12 relative">
-        {/* Left Technical Bar */}
-        <aside className="hidden lg:flex col-span-1 border-r border-cyber-text/10 flex-col items-center py-8 gap-12">
-          <div className="vertical-text rotate-180 font-mono text-[9px] text-cyber-text/30 uppercase tracking-[0.5em]">
-            Security_Protocol_Active
+        {/* Barra Lateral Marcada */}
+        <aside className="hidden lg:flex col-span-1 border-r-2 border-cyber-border flex-col items-center py-12 bg-[#080808]">
+          <div className="vertical-text rotate-180 font-mono text-[10px] text-cyber-purple uppercase tracking-[0.8em] font-black">
+            EVA-2003
           </div>
-          <div className="flex flex-col gap-2">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className="w-1 h-1 bg-cyber-alert/40" />
-            ))}
+          <div className="mt-auto mb-10 space-y-2">
+             {[1,2,3].map(i => <div key={i} className="w-1.5 h-6 bg-cyber-purple" />)}
           </div>
         </aside>
 
-        {/* Central Content */}
-        <div className="col-span-12 lg:col-span-11 relative overflow-hidden">
+        {/* Contenido Principal */}
+        <div className="col-span-12 lg:col-span-11 relative overflow-y-auto">
           {children}
         </div>
-
-        {/* Corner Accents */}
-        <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-cyber-alert -translate-x-[1px] -translate-y-[1px]" />
-        <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-cyber-alert translate-x-[1px] -translate-y-[1px]" />
-        <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-cyber-alert -translate-x-[1px] translate-y-[1px]" />
-        <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-cyber-alert translate-x-[1px] translate-y-[1px]" />
       </div>
+
+      {/* Acentos de Esquina - Revertido a solo los inferiores como estaba antes */}
+      <div className="absolute bottom-0 left-0 w-4 h-4 border-b-4 border-l-4 border-cyber-purple -translate-x-1 translate-y-1" />
+      <div className="absolute bottom-0 right-0 w-4 h-4 border-b-4 border-r-4 border-cyber-purple translate-x-1 translate-y-1" />
 
       <style jsx>{`
         .vertical-text {

@@ -13,8 +13,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PROJECT_PORTFOLIO // SECTION_09",
-  description: "High-density functional portfolio interface. Classified access only.",
+  title: "Sebastian Ibañez | Backend Engineer & Full-Stack Developer",
+  description: "Portfolio of Sebastian Ibañez, a Software Engineer specializing in Java, Spring Boot, AWS, and Microservices. Building secure and scalable distributed systems.",
+  keywords: ["Sebastian Ibañez", "Software Engineer", "Backend Developer", "Java", "Spring Boot", "AWS", "Microservices", "Full-Stack Developer", "Barranquilla"],
 };
 
 export default function RootLayout({

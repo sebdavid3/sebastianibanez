@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { ExternalLink, Folder } from "lucide-react";
+import { ExternalLink, Hash, ArrowUpRight } from "lucide-react";
 
 interface ProjectCardProps {
   id: string;
@@ -11,71 +11,70 @@ interface ProjectCardProps {
   tags: string[];
   status: string;
   description: string;
+  link: string;
   className?: string;
 }
 
-export const ProjectCard = ({ id, title, tags, status, description, className }: ProjectCardProps) => {
+export const ProjectCard = ({ id, title, tags, status, description, link, className }: ProjectCardProps) => {
   return (
-    <motion.div
-      whileHover={{ y: -5 }}
+    <motion.a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      whileHover={{ y: -4 }}
       className={cn(
-        "group relative border border-cyber-text/10 bg-cyber-bg/50 p-6 flex flex-col gap-4 overflow-hidden",
+        "group relative border-2 border-cyber-border bg-black p-0 flex flex-col hover:border-cyber-purple transition-all duration-300 cursor-pointer block",
         className
       )}
     >
-      {/* Background Accent */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-cyber-alert/5 blur-[80px] group-hover:bg-cyber-alert/15 transition-colors" />
-      
-      {/* Header Info */}
-      <div className="flex justify-between items-start">
-        <div className="space-y-1">
-          <p className="font-mono text-[10px] text-cyber-alert flex items-center gap-1">
-            <span className="w-1 h-1 bg-cyber-alert animate-pulse" /> FILE_ID: {id}
-          </p>
-          <div className="relative inline-block">
-            {/* RGB Split Effect on Title */}
-            <h3 className="text-2xl font-black uppercase tracking-tight group-hover:text-cyber-cyan transition-colors duration-300">
-              {title}
-            </h3>
-            <span className="absolute top-0 left-0 text-cyber-alert opacity-0 group-hover:opacity-70 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-all pointer-events-none uppercase font-black text-2xl tracking-tight">
-              {title}
-            </span>
-          </div>
+      {/* Header Area */}
+      <div className="border-b-2 border-cyber-border p-6 flex justify-between items-center bg-[#0A0A0A] group-hover:border-cyber-purple transition-colors">
+        <div className="font-mono text-[10px] text-cyber-purple tracking-[0.2em] font-black uppercase">
+          Archive_ID: {id}
         </div>
-        <Folder size={18} className="text-cyber-text/20 group-hover:text-cyber-cyan transition-colors" />
+        <div className="flex items-center gap-2">
+           <div className="w-2 h-2 rounded-full bg-cyber-green animate-pulse shadow-[0_0_8px_#52d053]" />
+           <span className="font-mono text-[9px] text-white/60 uppercase">{status}</span>
+        </div>
       </div>
 
-      {/* Description */}
-      <p className="text-sm text-cyber-text/60 leading-relaxed font-sans">
-        {description}
-      </p>
-
-      {/* Tags */}
-      <div className="flex flex-wrap gap-2 mt-auto">
-        {tags.map((tag) => (
-          <span key={tag} className="font-mono text-[9px] px-2 py-1 bg-cyber-text/5 text-cyber-text/40 border border-cyber-text/10 uppercase tracking-tighter">
-            {tag}
+      {/* Content Area */}
+      <div className="p-8 space-y-6">
+        <div className="relative">
+          <h3 className="text-4xl font-black uppercase tracking-tighter text-white group-hover:text-white transition-all relative z-10">
+            {title}
+          </h3>
+          
+          {/* Glitch Layers */}
+          <span className="absolute top-0 left-0 text-[#ff00ff] opacity-0 group-hover:opacity-70 group-hover:translate-x-[4px] group-hover:-translate-y-[2px] transition-all pointer-events-none uppercase font-black text-4xl tracking-tighter mix-blend-screen animate-pulse">
+            {title}
           </span>
-        ))}
-      </div>
-
-      {/* Status Bar */}
-      <div className="border-t border-cyber-text/10 pt-4 flex justify-between items-center mt-2">
-        <div className="font-mono text-[9px] text-cyber-warning tracking-widest">
-          STATUS: <span className="font-bold underline italic">{status}</span>
+          <span className="absolute top-0 left-0 text-cyber-green opacity-0 group-hover:opacity-70 group-hover:-translate-x-[4px] group-hover:translate-y-[2px] transition-all pointer-events-none uppercase font-black text-4xl tracking-tighter mix-blend-screen animate-pulse">
+            {title}
+          </span>
         </div>
-        <button className="text-cyber-text/30 hover:text-cyber-alert transition-colors">
-          <ExternalLink size={14} />
-        </button>
+        
+        <p className="text-sm text-cyber-muted leading-relaxed font-sans font-medium group-hover:text-white/80 transition-colors">
+          {description}
+        </p>
+
+        <div className="flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <span key={tag} className="font-mono text-[9px] text-white border border-cyber-purple/30 px-3 py-1 uppercase font-bold group-hover:border-cyber-purple group-hover:bg-cyber-purple/10 transition-all">
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
 
-      {/* Hover Line Animation */}
-      <motion.div 
-        className="absolute bottom-0 left-0 h-[2px] bg-cyber-alert"
-        initial={{ width: 0 }}
-        whileHover={{ width: "100%" }}
-        transition={{ duration: 0.3 }}
-      />
-    </motion.div>
+      {/* Footer Area */}
+      <div className="mt-auto border-t-2 border-cyber-border p-6 flex justify-between items-center group-hover:border-cyber-purple transition-colors">
+        <span className="font-mono text-[9px] text-cyber-purple uppercase font-black tracking-widest">Security_Class: Level_A</span>
+        <ArrowUpRight size={20} className="text-white opacity-20 group-hover:opacity-100 group-hover:text-cyber-purple transition-all" />
+      </div>
+
+      {/* Hover background effect (Subtle purple glow) */}
+      <div className="absolute inset-0 bg-cyber-purple/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+    </motion.a>
   );
 };
