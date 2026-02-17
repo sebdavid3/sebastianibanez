@@ -18,19 +18,19 @@ export const TerminalFrame = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <div className="flex-1 flex flex-col border-x-2 border-cyber-border mx-4 md:mx-16 relative bg-black/10 transition-colors duration-500">
+    <div className="flex-1 flex flex-col border-x border-cyber-border mx-1 md:mx-16 md:border-x-2 relative bg-black/10 transition-colors duration-500 overflow-hidden md:overflow-visible">
       {/* HUD Superior Sólido */}
-      <header className="h-16 border-b-2 border-cyber-border flex items-center justify-between px-8 font-mono text-[11px] tracking-widest text-white font-bold bg-black/20">
-        <div className="flex items-center gap-10">
-          <div className="flex items-center gap-3">
-            <div className="w-2.5 h-2.5 bg-cyber-green rounded-full shadow-[0_0_8px_#52d053]" />
-            <span className="text-white uppercase">Synchronized</span>
+      <header className="h-12 md:h-16 border-b-2 border-cyber-border flex items-center justify-between px-4 md:px-8 font-mono text-[9px] md:text-[11px] tracking-widest text-white font-bold bg-black/20">
+        <div className="flex items-center gap-4 md:gap-10">
+          <div className="flex items-center gap-2 md:gap-3">
+            <div className="w-2 h-2 md:w-2.5 md:h-2.5 bg-cyber-green rounded-full shadow-[0_0_8px_#52d053]" />
+            <span className="text-white uppercase">Sync</span>
           </div>
-          <span className="hidden md:inline text-cyber-purple font-black tracking-[0.2em]">PROTOCOL: SEBDAVID3_OS</span>
+          <span className="hidden sm:inline text-cyber-purple font-black tracking-[0.2em]">PROTOCOL: SEBDAVID3_OS</span>
         </div>
-        <div className="flex items-center gap-10">
-          <span className="text-cyber-purple uppercase font-black tracking-tighter">LOC: 10.9833° N, 74.8019° W</span>
-          <span className="text-white border-l border-cyber-border pl-10">T: {time}</span>
+        <div className="flex items-center gap-4 md:gap-10">
+          <span className="hidden lg:inline text-cyber-purple uppercase font-black tracking-tighter">LOC: 10.9833° N, 74.8019° W</span>
+          <span className="text-white border-l border-cyber-border pl-4 md:pl-10">T: {time}</span>
         </div>
       </header>
 
@@ -51,9 +51,9 @@ export const TerminalFrame = ({ children }: { children: React.ReactNode }) => {
         </div>
       </div>
 
-      {/* Acentos de Esquina - Revertido a solo los inferiores como estaba antes */}
-      <div className="absolute bottom-0 left-0 w-4 h-4 border-b-4 border-l-4 border-cyber-purple -translate-x-1 translate-y-1" />
-      <div className="absolute bottom-0 right-0 w-4 h-4 border-b-4 border-r-4 border-cyber-purple translate-x-1 translate-y-1" />
+      {/* Acentos de Esquina - Ajustados para evitar desbordamiento en móviles */}
+      <div className="absolute bottom-0 left-0 w-4 h-4 border-b-4 border-l-4 border-cyber-purple md:-translate-x-1 translate-y-1" />
+      <div className="absolute bottom-0 right-0 w-4 h-4 border-b-4 border-r-4 border-cyber-purple md:translate-x-1 translate-y-1" />
 
       <style jsx>{`
         .vertical-text {

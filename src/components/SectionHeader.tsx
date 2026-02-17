@@ -16,7 +16,7 @@ export const SectionHeader = ({ title, subtitle }: SectionHeaderProps) => {
           {title}
         </h2>
       </div>
-      <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white">
+      <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-white">
         {subtitle}
       </h3>
     </div>

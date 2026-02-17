@@ -91,7 +91,7 @@ export const ContactForm = () => {
         disabled={isSending}
         whileHover={{ scale: 1.02, backgroundColor: "#A855F7", color: "#000" }}
         whileTap={{ scale: 0.98 }}
-        className="w-full py-4 border-2 border-cyber-purple text-cyber-purple font-black text-xs tracking-[0.5em] uppercase flex items-center justify-center gap-4 transition-all disabled:opacity-50"
+        className="w-full py-4 border-2 border-cyber-purple text-cyber-purple font-black text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase flex items-center justify-center gap-4 transition-all disabled:opacity-50"
       >
         {isSending ? (
           <>UPLINKING... <Loader2 size={16} className="animate-spin" /></>

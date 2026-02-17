@@ -42,7 +42,7 @@ export default function RootLayout({
             fill
             priority
             quality={75}
-            className="object-cover object-center"
+            className="object-cover object-[center_25%] md:object-center"
           />
         </div>
         
