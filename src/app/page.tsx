@@ -137,7 +137,7 @@ export default function Home() {
 
                   <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-6 md:gap-10">
                     <motion.a
-                      href="/CV_Sebastian_Ibanez.pdf"
+                      href="/cv_SebastianIbanez.pdf"
                       download
                       whileHover={{ scale: 1.05, backgroundColor: "#A855F7", boxShadow: "0 0 20px rgba(168, 85, 247, 0.4)" }}
                       whileTap={{ scale: 0.95 }}
