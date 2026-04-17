@@ -372,6 +372,15 @@ export default function Home() {
                   <SectionHeader title="Classified_Archives" subtitle="04_PROJECTS" />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0 mt-12">
                     <ProjectCard 
+                      id="FILE_00_RESONANCE"
+                      title="Retentissement"
+                      description="A performative web experience built around Roland Barthes' 'A Lover's Discourse'. The interface acts as a digital resonance chamber, exploring subjective pain, memory, and the collapse of recollection through interactive scroll, real-time spectral audio analysis (Web Audio API), and brutalist aesthetics."
+                      tags={["Vanilla JS", "Web Audio API", "GSAP", "Canvas", "Vite"]}
+                      status="LIVE"
+                      link="https://resonance.sebdavid.dev/"
+                      className="md:col-span-2"
+                    />
+                    <ProjectCard 
                       id="FILE_01_MVP"
                       title="LocalMarket"
                       description="Full-stack ecosystem connecting local farmers with consumers. Features real-time cart and supplier dashboards."
