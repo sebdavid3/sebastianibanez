@@ -4,6 +4,7 @@ import { TerminalFrame } from "@/components/TerminalFrame";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ContactForm } from "@/components/ContactForm";
+import { DurationCounter } from "@/components/DurationCounter";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Github, Linkedin, Mail, Cpu, ShieldAlert, FileText, FolderCode, Terminal, Database, Code2, Cloud, Palette, User, ExternalLink, ChevronRight } from "lucide-react";
@@ -278,7 +279,7 @@ export default function Home() {
                           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter">Junior Software Engineer</h3>
                           <div className="text-left md:text-right">
                             <span className="font-mono text-[10px] md:text-xs text-cyber-purple font-bold uppercase block">Aug 2025 – Present</span>
-                            <span className="font-mono text-[9px] md:text-[10px] text-white/40 uppercase block">Duration: 7 months</span>
+                            <DurationCounter startDate="Aug 2025" />
                           </div>
                         </div>
                         <p className="font-mono text-xs md:text-sm text-cyber-green font-bold uppercase tracking-widest">Security Systems S.A.S</p>
@@ -319,7 +320,7 @@ export default function Home() {
                             <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter">Music Technology Teacher</h3>
                             <div className="text-left md:text-right">
                               <span className="font-mono text-[10px] md:text-xs text-cyber-purple font-bold uppercase block">Feb 2026 – Present</span>
-                              <span className="font-mono text-[9px] md:text-[10px] text-white/40 uppercase block">Duration: 1 month</span>
+                              <DurationCounter startDate="Feb 2026" />
                             </div>
                           </div>
                           <p className="font-mono text-xs md:text-sm text-cyber-green font-bold uppercase tracking-widest">Fundación Rubato</p>
@@ -341,7 +342,7 @@ export default function Home() {
                             <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter">IT Coordinator</h3>
                             <div className="text-left md:text-right">
                               <span className="font-mono text-[10px] md:text-xs text-cyber-purple font-bold uppercase block">Jul 2024 – Present</span>
-                              <span className="font-mono text-[9px] md:text-[10px] text-white/40 uppercase block">Duration: 1 year 8 months</span>
+                              <DurationCounter startDate="Jul 2024" />
                             </div>
                           </div>
                           <div className="space-y-4 text-white/70 font-sans leading-relaxed text-xs md:text-sm">
